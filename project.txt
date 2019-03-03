@@ -1,0 +1,30 @@
+
+
+
+
+adding tables to admin
+go to app page in admin
+
+	from .models import Realtor
+
+	admin.site.register(Realtor)
+this will add table data to admin page
+
+
+add media file in setting.py folder like static path
+
+STATIC_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_URL = '/media/'
+
+add media infor to URLPAtterens in main urls.py
+] + static (settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)  (these are setting locations) add import settings
+
+
+update table in admin area go to app admin update details:
+class listingAdmin(admin.ModelAdmin):
+    list_display = ( 'id','title', 'is_published','price')
+    list_display_links =('id', 'title')
+
+admin.site.register(listing, listingAdmin)
+
+
